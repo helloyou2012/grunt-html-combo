@@ -1,0 +1,42 @@
+{
+  "name": "grunt-html-combo",
+  "description": "JS and CSS combo into html.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/helloyou2012/grunt-html-combo",
+  "author": {
+    "name": "学霸",
+    "email": "helloyou2012@yeah.net",
+    "url": "http://helloyou2012.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helloyou2012/grunt-html-combo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helloyou2012/grunt-html-combo/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/helloyou2012/grunt-html-combo/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
