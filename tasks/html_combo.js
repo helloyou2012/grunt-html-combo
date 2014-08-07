@@ -39,11 +39,13 @@ module.exports = function(grunt) {
   };
 
   var html_combo = function(src, dest, options, cb) {
-    var code = grunt.file.read(src);
-    code = replace_css(src, code);
-    code = replace_js(src, code);
-    grunt.file.write(dest, code);
-    cb(null);
+    src.forEach(function(file) {
+      var code = grunt.file.read(file);
+      code = replace_css(src, code);
+      code = replace_js(src, code);
+      grunt.file.write(dest, code);
+      cb(null);
+    });
   };
 
   grunt.registerMultiTask('html_combo', 'JS and CSS combo into html.', function() {
