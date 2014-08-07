@@ -17,8 +17,9 @@ module.exports = function(grunt) {
   var replace_css = function(src, data) {
     return data.replace(/<link[^>]*href=\"([^\"]+)\"[^>]*>/gi, function(wholeMatch, m1) {
       if (m1.indexOf('http') < 0) {
-        var relativePath = path.relative(src, m1);
-        var css_code = grunt.file.read(relativePath);
+        var srcPath = path.dirname(src);
+        var css_file = path.relative(path.relative(srcPath, '.'), m1);
+        var css_code = grunt.file.read(css_file);
         return '<style type="text/css">' + css_code + '</style>';
       } else {
         return wholeMatch;
@@ -29,8 +30,9 @@ module.exports = function(grunt) {
   var replace_js = function(src, data) {
     return data.replace(/<script[^>]*src=\"([^\"]+)\"[^>]*>.*<\/script>/gi, function(wholeMatch, m1) {
       if (m1.indexOf('http') < 0) {
-        var relativePath = path.relative(src, m1);
-        var js_code = grunt.file.read(relativePath);
+        var srcPath = path.dirname(src);
+        var js_file = path.relative(path.relative(srcPath, '.'), m1);
+        var js_code = grunt.file.read(js_file);
         return '<script type="text/javascript">' + js_code + '</script>';
       } else {
         return wholeMatch;
