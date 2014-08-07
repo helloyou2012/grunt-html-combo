@@ -31,20 +31,16 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     html_combo: {
       default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        expand: true,
+        cwd: 'test',
+        src: ['fixtures/*'],
+        dest: 'tmp'
       },
       custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!'
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
-        }
+        expand: true,
+        cwd: 'test',
+        src: ['fixtures/*'],
+        dest: 'tmp'
       }
     },
 
