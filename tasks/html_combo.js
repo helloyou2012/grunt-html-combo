@@ -41,8 +41,8 @@ module.exports = function(grunt) {
   var html_combo = function(src, dest, options, cb) {
     src.forEach(function(file) {
       var code = grunt.file.read(file);
-      code = replace_css(src, code);
-      code = replace_js(src, code);
+      code = replace_css(file, code);
+      code = replace_js(file, code);
       grunt.file.write(dest, code);
       cb(null);
     });
